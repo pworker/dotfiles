@@ -7,3 +7,6 @@
 [submodule "_vim/bundle/neocomplcache"]
 	path = _vim/bundle/neocomplcache
 	url = https://github.com/Shougo/neocomplcache.git
+[submodule "_oh-my-zsh"]
+	path = _oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git
