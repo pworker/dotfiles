@@ -12,12 +12,12 @@ syntax enable
 set background=dark
 colorscheme solarized
 
+
 """""""""""""""""""""""""""""
-" Other
+" Plugin : NERDTree
 """""""""""""""""""""""""""""
-:set nu
-filetype on
-filetype plugin on
+"bind F5 to open NERDTree
+nnoremap <silent> <F5> :NERDTree<CR>
 
 
 """"""""""""""""""""""""""""""
@@ -53,3 +53,13 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+
+
+"""""""""""""""""""""""""""""
+" Other
+"""""""""""""""""""""""""""""
+:set nu
+filetype on
+filetype plugin on
+
+
