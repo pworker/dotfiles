@@ -20,6 +20,15 @@ colorscheme solarized
 nnoremap <silent> <F5> :NERDTree<CR>
 
 
+"""""""""""""""""""""""""""""
+" Plugin : neocomplcache
+"""""""""""""""""""""""""""""
+let g:neocomplcache_enable_at_startup = 1
+
+
+
+
+
 """"""""""""""""""""""""""""""
 " Statusline
 """"""""""""""""""""""""""""""
