@@ -10,3 +10,6 @@
 [submodule "_oh-my-zsh"]
 	path = _oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule "_vim/bundle/snipmate"]
+	path = _vim/bundle/snipmate
+	url = https://github.com/msanders/snipmate.vim.git
