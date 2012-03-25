@@ -1,7 +1,12 @@
 Create symlinks:
+
     VIM:
         ln -s dotfiles/_vim/_vimrc ~/.vimrc
         ln -s dotfiles/_vim/ ~/.vim
 
     Tmux:
         ln -s dotflies/_tmux.conf ~/.tmux.conf
+
+    Zsh:
+        ln -s dotfiles/_zshrc ~/.zshrc
+        ln -s dotfiles/_oh-my-zsh ~/.oh-my-zsh
