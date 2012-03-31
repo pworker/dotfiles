@@ -19,3 +19,6 @@
 [submodule "_vim/bundle/Syntastic"]
 	path = _vim/bundle/Syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "_vim/bundle/pep8"]
+	path = _vim/bundle/pep8
+	url = https://github.com/vim-scripts/pep8.git
