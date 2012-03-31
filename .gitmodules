@@ -16,3 +16,6 @@
 [submodule "_vim/bundle/surround"]
 	path = _vim/bundle/surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "_vim/bundle/Syntastic"]
+	path = _vim/bundle/Syntastic
+	url = https://github.com/scrooloose/syntastic.git
