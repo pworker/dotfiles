@@ -17,7 +17,7 @@ colorscheme solarized
 " Plugin : NERDTree
 """""""""""""""""""""""""""""
 "bind F5 to open NERDTree
-nnoremap <silent> <F5> :NERDTree<CR>
+nnoremap <silent> <F4> :NERDTree<CR>
 
 
 """""""""""""""""""""""""""""
@@ -96,3 +96,8 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
+
+set foldmethod=indent
+set foldlevel=99
+
+

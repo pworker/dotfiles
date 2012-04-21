@@ -1,3 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =2
 let g:netrw_dirhist_1='/Users/pworker/dotfiles/_vim/bundle/Syntastic/syntax_checkers/python'
+let g:netrw_dirhist_2='/Users/pworker/Documents/Project/temp/fb-crawler-read-only'
