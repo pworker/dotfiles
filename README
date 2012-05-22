@@ -10,3 +10,9 @@ Create symlinks:
     Zsh:
         ln -s dotfiles/_zshrc ~/.zshrc
         ln -s dotfiles/_oh-my-zsh ~/.oh-my-zsh
+
+
+Git submodule:
+
+    git submodule init
+    git submodule update
