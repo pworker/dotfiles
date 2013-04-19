@@ -1,30 +1,6 @@
-[submodule "_vim/bundle/vim-colors-solarized"]
-	path = _vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "_vim/bundle/nerdtree"]
-	path = _vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
 [submodule "_oh-my-zsh"]
 	path = _oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
-[submodule "_vim/bundle/surround"]
-	path = _vim/bundle/surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule "_vim/bundle/Syntastic"]
-	path = _vim/bundle/Syntastic
-	url = https://github.com/scrooloose/syntastic.git
-[submodule "_vim/bundle/pep8"]
-	path = _vim/bundle/pep8
-	url = https://github.com/vim-scripts/pep8.git
-[submodule "_vim/bundle/pydoc"]
-	path = _vim/bundle/pydoc
-	url = https://github.com/fs111/pydoc.vim.git
-[submodule "_vim/bundle/powerline"]
-	path = _vim/bundle/powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
-[submodule "_vim/bundle/indent-guides"]
-	path = _vim/bundle/indent-guides
-	url = https://github.com/nathanaelkane/vim-indent-guides.git
-[submodule "_vim/bundle/YouCompleteMe"]
-	path = _vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "_vim/bundle/vundle"]
+	path = _vim/bundle/vundle
+	url = https://github.com/gmarik/vundle.git
