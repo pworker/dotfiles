@@ -3,7 +3,8 @@ Create symlinks:
     VIM:
         ln -s dotfiles/_vimrc ~/.vimrc
         ln -s dotfiles/_vim/ftplugin ~/.vim/ftpligin
-
+	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+	vim +BundleInstall +qall
     Tmux:
         ln -s dotflies/_tmux.conf ~/.tmux.conf
 
