@@ -34,7 +34,6 @@ nnoremap <silent> <F4> :NERDTree<CR>
 
 
 
-
 """"""""""""""""""""""""""""""
 " Statusline
 """"""""""""""""""""""""""""""
@@ -57,18 +56,6 @@ function! HasPaste()
         return ''
     endif
 endfunction
-
-
-"""""""""""""""""""""""""""""
-" set tab for python
-"""""""""""""""""""""""""""""
-set autoindent " same level indent
-set smartindent " next level indent
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-
 
 """""""""""""""""""""""""""""
 " Other
