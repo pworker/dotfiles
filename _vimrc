@@ -10,13 +10,14 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-surround'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'python.vim'
+Bundle 'pyflakes.vim'
 
 filetype plugin indent on 
-
+filetype on    
 
 """""""""""""""""""""""""""""
 " Colorscheme : Solarized  
@@ -24,7 +25,6 @@ filetype plugin indent on
 syntax enable
 set background=dark
 colorscheme solarized
-
 
 """""""""""""""""""""""""""""
 " Plugin : NERDTree
@@ -84,6 +84,8 @@ map <c-h> <c-w>h
 
 set foldmethod=indent
 set foldlevel=99
+"Fix backspace
+set backspace=indent,eol,start
 
 """""""""""""""""""""""""""""
 "indent-guides
