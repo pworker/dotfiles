@@ -10,12 +10,11 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'python.vim'
 Bundle 'pyflakes.vim'
-
+Bundle 'bling/vim-airline'
 filetype plugin indent on 
 filetype on    
 
@@ -39,7 +38,6 @@ nnoremap <silent> <F4> :NERDTree<CR>
 """"""""""""""""""""""""""""""
 " Always hide the statusline
 set laststatus=2
-
 " Format the statusline
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
 
