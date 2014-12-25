@@ -1,3 +1,6 @@
+# UTF-8
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
 # virtualenvwrapper :
 export WORKON_HOME=~/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
@@ -41,3 +44,4 @@ export PATH=/Applications/android/platform-tools:/usr/local/bin:/usr/bin:/bin:/u
 
 
 PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
+PATH=$HOME/bin:$PATH # Add sbul in ~/bin
