@@ -68,6 +68,8 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+
 set foldmethod=indent
 set foldlevel=99
 "Fix backspace
