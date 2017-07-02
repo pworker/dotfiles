@@ -1,37 +1,42 @@
 set encoding=utf-8
-"""""""""""""""""""""""""""""
-" Plugin : Vundle
-"""""""""""""""""""""""""""""
-set nocompatible
-filetype off
+set number
+set ts=4
+set expandtab
+set shiftwidth=4
+set cursorline
+set cursorcolumn
+set showmatch
+let python_highlight_all = 1
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
 
-Bundle 'gmarik/vundle'
-"Bundle 'altercation/vim-colors-solarized'
-Bundle 'scrooloose/nerdtree'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'python.vim'
-Bundle 'pyflakes.vim'
-Bundle 'bling/vim-airline'
-filetype plugin indent on 
-filetype on    
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-sensible'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin',  { 'on':  'NERDTreeToggle' }
+Plug 'w0rp/ale'
+Plug 'jmcantrell/vim-virtualenv'
+Plug 'vim-airline/vim-airline'
+Plug 'python-mode/python-mode'
 
-"""""""""""""""""""""""""""""
-" Colorscheme : Solarized  
-"""""""""""""""""""""""""""""
-syntax enable
-"set background=dark
-"colorscheme solarized
+function! BuildYCM(info)
+  " info is a dictionary with 3 fields
+  " - name:   name of the plugin
+  " - status: 'installed', 'updated', or 'unchanged'
+  " - force:  set on PlugInstall! or PlugUpdate!
+  if a:info.status == 'installed' || a:info.force
+    !./install.py
+  endif
+endfunction
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+
+call plug#end()
+
 
 """""""""""""""""""""""""""""
 " Plugin : NERDTree
 """""""""""""""""""""""""""""
-"bind F5 to open NERDTree
+"bind F4 to open NERDTree
 nnoremap <silent> <F4> :NERDTree<CR>
-
 
 
 """"""""""""""""""""""""""""""
@@ -40,52 +45,36 @@ nnoremap <silent> <F4> :NERDTree<CR>
 " Always hide the statusline
 set laststatus=2
 " Format the statusline
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
+"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
+let g:airline#extensions#ale#enabled = 1
+
+"function! LinterStatus() abort
+"    let l:counts = ale#statusline#Count(bufnr(''))
+"
+"    let l:all_errors = l:counts.error + l:counts.style_error
+"    let l:all_non_errors = l:counts.total - l:all_errors
+"
+"    return l:counts.total == 0 ? 'OK' : printf(
+"    \   '%dW %dE',
+"    \   all_non_errors,
+"    \   all_errors
+"    \)
+"endfunction
+"
+"set statusline=%{LinterStatus()}
+"
+"function! CurDir()
+"    let curdir = substitute(getcwd(), '/Users/pworker/', "~/", "g")
+"    return curdir
+"endfunction
+"
+"function! HasPaste()
+"    if &paste
+"        return 'PASTE MODE  '
+"    else
+"        return ''
+"    endif
+"endfunction
 
 
-function! CurDir()
-    let curdir = substitute(getcwd(), '/Users/amir/', "~/", "g")
-    return curdir
-endfunction
-
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    else
-        return ''
-    endif
-endfunction
-
-"""""""""""""""""""""""""""""
-" Other
-"""""""""""""""""""""""""""""
-:set nu
-filetype on
-filetype plugin on
-
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
-
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
-
-set foldmethod=indent
-set foldlevel=99
-"Fix backspace
-set backspace=indent,eol,start
-
-"""""""""""""""""""""""""""""
-"indent-guides
-"""""""""""""""""""""""""""""
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * : hi IndentGuidesOdd  ctermbg=black
-autocmd VimEnter,Colorscheme * : hi IndentGuidesEven ctermbg=darkgrey
-
-
-nnoremap <silent> <F8> :IndentGuidesToggle<CR>
-
-
-
-
-
+autocmd FileType python nnoremap <LocalLeader>= :0,$!yapf<CR>
