@@ -35,13 +35,13 @@ ZSH_THEME="bira"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx brew pip python zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git osx brew pip python zsh-syntax-highlighting zsh-autosuggestions brew-cask docker)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/Applications/android/platform-tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export PATH="/usr/local/sbin:$PATH"
 
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
-PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
-PATH=$HOME/bin:$PATH # Add sbul in ~/bin
