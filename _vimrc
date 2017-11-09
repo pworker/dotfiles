@@ -21,7 +21,7 @@ endfunction
 Plug 'scrooloose/nerdtree' , { 'on':  'NERDTreeToggle' }   " Project and file navigation
 Plug 'Xuyuanp/nerdtree-git-plugin',  { 'on':  'NERDTreeToggle' }
 Plug 'majutsushi/tagbar'                                   " Class/module browser
-Plug 'kien/ctrlp.vim'                                      " Fast transitions on project files
+Plug 'ctrlpvim/ctrlp.vim'                                      " Fast transitions on project files
 Plug 'tpope/vim-fugitive'                                  " Git
 "-------------------=== Other ===-------------------------------
 Plug 'vim-airline/vim-airline'
