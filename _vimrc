@@ -30,9 +30,6 @@ Plug 'chriskempson/base16-vim'
 "-------------------=== Languages support ===-------------------
 Plug 'w0rp/ale'
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
-"-------------------=== Snippets support ===--------------------
-Plug 'SirVer/ultisnips'                                    " snippets engine
-Plug 'honza/vim-snippets'                                  " snippets repo
  "-------------------=== Python  ===-----------------------------
 Plug 'klen/python-mode'                                    " Python mode (docs, refactor, lints...)
 
