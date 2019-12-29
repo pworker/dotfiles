@@ -31,7 +31,6 @@ Plug 'chriskempson/base16-vim'
 Plug 'w0rp/ale'
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
  "-------------------=== Python  ===-----------------------------
-Plug 'klen/python-mode'                                    " Python mode (docs, refactor, lints...)
 
 call plug#end()
 
@@ -53,13 +52,6 @@ let g:airline#extensions#tabline#formatter='unique_tail'
 let g:airline#extensions#ale#enabled = 1
 
 "=====================================================
-"" Ulitsnips settings
-"=====================================================
-let g:UltiSnipsExpandTrigger="\\"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-"=====================================================
 "" TagBar settings
 "=====================================================
 let g:tagbar_autofocus=0
@@ -71,47 +63,6 @@ autocmd BufWinLeave *.py :TagbarClose
 "" Python settings
 "=====================================================
 
-
-let g:pymode_python='python3'                              " python executables for different plugins
-
-" rope
-let g:pymode_rope=0
-let g:pymode_rope_completion=0
-let g:pymode_rope_complete_on_dot=0
-let g:pymode_rope_auto_project=0
-let g:pymode_rope_enable_autoimport=0
-let g:pymode_rope_autoimport_generate=0
-let g:pymode_rope_guess_project=0
-
-" documentation
-let g:pymode_doc=0
-let g:pymode_doc_key='K'
-
-" lints
-let g:pymode_lint=0
-
-" virtualenv
-let g:pymode_virtualenv=1
-
-" breakpoints
-let g:pymode_breakpoint=1
-let g:pymode_breakpoint_key='<leader>b'
-
-" syntax highlight
-let g:pymode_syntax=1
-let g:pymode_syntax_slow_sync=1
-let g:pymode_syntax_all=1
-let g:pymode_syntax_print_as_function=g:pymode_syntax_all
-
-" code folding
-let g:pymode_folding=0
-
-" pep8 indents
-let g:pymode_indent=1
-
-" code running
-let g:pymode_run=1
-let g:pymode_run_bind='<F5>'
 
 
 "=====================================================
