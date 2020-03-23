@@ -11,25 +11,21 @@ endif
 
 call plug#begin()
 
-function! BuildYCM(info)
-  if a:info.status == 'updated' || a:info.force
-    !./install.py
-  endif
-endfunction
-
 "-------------------=== Code/Project navigation ===-------------
-Plug 'scrooloose/nerdtree' , { 'on':  'NERDTreeToggle' }   " Project and file navigation
-Plug 'Xuyuanp/nerdtree-git-plugin',  { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'                                 " Project and file navigation
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar'                                   " Class/module browser
-Plug 'ctrlpvim/ctrlp.vim'                                      " Fast transitions on project files
 Plug 'tpope/vim-fugitive'                                  " Git
 "-------------------=== Other ===-------------------------------
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'chriskempson/base16-vim'
 "-------------------=== Languages support ===-------------------
-Plug 'w0rp/ale'
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'mattn/vim-lsp-settings'
  "-------------------=== Python  ===-----------------------------
 
 call plug#end()
@@ -41,7 +37,6 @@ call plug#end()
 "=====================================================
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']    " Ignore files in NERDTree
 let NERDTreeWinSize=40
-nnoremap <silent> <F4> :NERDTree<CR>                       "bind F4 to open NERDTree
 
 "=====================================================
 "" AirLine settings
@@ -55,22 +50,36 @@ let g:airline#extensions#ale#enabled = 1
 "" TagBar settings
 "=====================================================
 let g:tagbar_autofocus=0
-let g:tagbar_width=42
+let g:tagbar_width=32
 autocmd BufEnter *.py :call tagbar#autoopen(0)
-autocmd BufWinLeave *.py :TagbarClose
 
 "=====================================================
 "" Python settings
 "=====================================================
 
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+imap <c-space> <Plug>(asyncomplete_force_refresh)
 
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_signs_error = {'text': '✗'}
+let g:lsp_signs_warning = {'text': '‼'}
+let g:lsp_signs_information = {'text': 'i'}
+let g:lsp_signs_hint = {'text': '?'}
+
+augroup LspAutoFormatting
+    autocmd!
+    autocmd BufWritePre *.py LspDocumentFormatSync
+augroup END
 
 "=====================================================
 "" General settings
 "=====================================================
 syntax enable                               " syntax highlight
 let base16colorspace=256
-colorscheme base16-solarized-dark
+colorscheme base16-phd
 
 set number                                  " show line numbers
 
@@ -92,6 +101,7 @@ set noswapfile 	                            " no swap files
 set backspace=indent,eol,start              " backspace removes all (indents, EOLs, start), Fix macOS backspace
 
 set scrolloff=10                            " let 10 lines before/after cursor during scroll
+set mouse=a
 
 "set clipboard=unnamed                       " use system clipboard
 
@@ -101,8 +111,13 @@ set scrolloff=10                            " let 10 lines before/after cursor d
 tab sball
 set switchbuf=useopen
 set laststatus=2
-nmap <F9> :bprev<CR>
-nmap <F10> :bnext<CR>
-
-autocmd FileType python nnoremap <LocalLeader>= :0,$!yapf<CR>
-autocmd FileType python nnoremap <LocalLeader>i :!isort %<CR><CR>
+nmap <silent> <F9> :bprev<CR>
+nmap <silent> <F10> :bnext<CR>
+nmap <silent> <F4> :NERDTreeToggle<CR>
+let maplocalleader = "\\"
+nnoremap <C-]> :<C-u>LspDefinition<CR>
+nnoremap K :<C-u>LspHover<CR>
+nnoremap <LocalLeader>R :<C-u>LspRename<CR>
+nnoremap <LocalLeader>n :<C-u>LspReferences<CR>
+nnoremap <LocalLeader>f :<C-u>LspDocumentDiagnostics<CR>
+nnoremap <LocalLeader>s :<C-u>LspDocumentFormat<CR>
