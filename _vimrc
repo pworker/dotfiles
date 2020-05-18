@@ -79,7 +79,7 @@ augroup END
 "=====================================================
 syntax enable                               " syntax highlight
 let base16colorspace=256
-colorscheme base16-phd
+colorscheme base16-helios
 
 set number                                  " show line numbers
 
