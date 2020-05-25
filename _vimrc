@@ -52,6 +52,7 @@ let g:airline#extensions#ale#enabled = 1
 let g:tagbar_autofocus=0
 let g:tagbar_width=32
 autocmd BufEnter *.py :call tagbar#autoopen(0)
+autocmd BufEnter *.cpp :call tagbar#autoopen(0)
 
 "=====================================================
 "" Python settings
