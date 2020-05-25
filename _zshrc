@@ -61,9 +61,14 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
-#advance cli alias
-alias cat='batcat'
+#alias
+if [[ "$(uname)" == "Darwin" ]]; then
+    alias cat='bat'
+fi
+if [[ "$(uname)" == "Linux" ]]; then
+    alias cat='batcat'
+    alias fd='fdfind'
+fi
 alias ping='prettyping --nolegend'
 alias ls='exa'
-#alias fd='fdfind'
 
