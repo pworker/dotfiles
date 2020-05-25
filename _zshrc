@@ -1,7 +1,9 @@
 # UTF-8
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
- #Path to your oh-my-zsh configuration.
+# virtualenvwrapper :
+export WORKON_HOME=~/.virtualenvs
+#Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
@@ -34,27 +36,24 @@ ZSH_THEME="bira"
 plugins=(
     gitfast
     gitignore
-    fzf
     fd
-    mosh
     pass
     osx
     pip
     python
     pyenv
-    django
+    osx
+    fzf
     zsh-syntax-highlighting
     zsh-autosuggestions
     zsh-completions
     docker
-    golang
 )
 
 source $ZSH/oh-my-zsh.sh
 
 autoload -Uz compinit && compinit
 # Customize to your needs...
-export PATH="/usr/local/sbin:$PATH"
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
@@ -63,7 +62,8 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 #advance cli alias
-alias cat='bat'
+alias cat='batcat'
 alias ping='prettyping --nolegend'
 alias ls='exa'
+#alias fd='fdfind'
 
