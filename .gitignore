@@ -2,3 +2,5 @@
 *.swp
 tags
 .DS_Store
+_vim/autoload/*
+_vim/plugged/*
