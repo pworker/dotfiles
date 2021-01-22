@@ -1,22 +1,12 @@
-Create symlinks:
+Installation:
 
-    VIM:
-        ln -s dotfiles/_vimrc ~/.vimrc
-	    vim        #auto install vim-plug and all plugins in .vimrc
-    Tmux:
-        ln -s dotfiles/_tmux.conf ~/.tmux.conf
+    ./install.sh
 
-    Zsh:
-        ln -s dotfiles/_zshrc ~/.zshrc
-        ln -s dotfiles/_oh-my-zsh ~/.oh-my-zsh
+Fancy staff:
+    ping - prettyping 
+    find - fd-find
+    cat - bat
+    ls -exa
 
+    prettyping fd-find bat exa
 
-Git submodule:
-
-    git submodule init
-    git submodule update
-
-Install zsh-syntax-highlighting / zsh-autosuggestions
-
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
