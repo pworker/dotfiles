@@ -1,13 +1,14 @@
 #!/bin/bash
 
+git submodule init
+git submodule update
+
 ln -sf dotfiles/_vimrc ~/.vimrc
 ln -sf dotfiles/_vim ~/.vim
 ln -sf dotfiles/_tmux.conf ~/.tmux.conf
 ln -sf dotfiles/_zshrc ~/.zshrc
 ln -sf dotfiles/ohmyzsh ~/.ohmyzsh
 
-git submodule init
-git submodule update
 
 #install oh-my-zsh & plugins with submodule 
 
