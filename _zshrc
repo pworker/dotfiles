@@ -4,7 +4,7 @@ export LANG=en_US.UTF-8
 # virtualenvwrapper :
 export WORKON_HOME=~/.virtualenvs
 #Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+ZSH=$HOME/.ohmyzsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
