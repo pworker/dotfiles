@@ -7,7 +7,6 @@ ln -sf dotfiles/_vimrc ~/.vimrc
 ln -sf dotfiles/_vim ~/.vim
 ln -sf dotfiles/_tmux.conf ~/.tmux.conf
 ln -sf dotfiles/_zshrc ~/.zshrc
-ln -sf dotfiles/_zprofile ~/.zprofile
 ln -sf dotfiles/ohmyzsh ~/.ohmyzsh
 
 
@@ -16,3 +15,13 @@ ln -sf dotfiles/ohmyzsh ~/.ohmyzsh
 ln -sf ~/dotfiles/zsh-plugins/zsh-syntax-highlighting ~/dotfiles/ohmyzsh/custom/plugins/zsh-syntax-highlighting
 ln -sf ~/dotfiles/zsh-plugins/zsh-autosuggestions ~/dotfiles/ohmyzsh/custom/plugins/zsh-autosuggestions
 ln -sf ~/dotfiles/zsh-plugins/zsh-completions ~/dotfiles/ohmyzsh/custom/plugins/zsh-completions
+
+
+
+
+#settings for pyenv
+if [[ "$(uname)" == "Linux" ]]; then
+    ln -sf dotfiles/_zprofile ~/.zprofile
+fi
+
+
