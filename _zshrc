@@ -38,12 +38,11 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 #OS specific
 if [[ "$(uname)" == "Darwin" ]]; then
     alias cat='bat'
-    alias ibrew='arch -x86_64 /usr/local/bin/brew'
-    eval $(/opt/homebrew/bin/brew shellenv)
-    eval $(pyenv init --path)
-    PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-    PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
-
+    eval $(/usr/local/bin/brew shellenv)
+    if [[ "$(arch)" == "arm64" ]]; then
+        alias ibrew='arch -x86_64 /usr/local/bin/brew'
+        eval $(/opt/homebrew/bin/brew shellenv)
+    fi
 fi
 if [[ "$(uname)" == "Linux" ]]; then
     alias cat='batcat'
