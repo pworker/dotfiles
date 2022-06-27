@@ -19,9 +19,5 @@ ln -sf ~/dotfiles/zsh-plugins/zsh-completions ~/dotfiles/ohmyzsh/custom/plugins/
 
 
 
-#settings for pyenv
-if [[ "$(uname)" == "Linux" ]]; then
-    ln -sf dotfiles/_zprofile ~/.zprofile
-fi
 
 

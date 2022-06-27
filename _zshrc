@@ -7,8 +7,10 @@ FZF_BASE=/opt/homebrew/opt/fzf
 #Path to your oh-my-zsh configuration.
 ZSH=$HOME/.ohmyzsh
 ZSH_THEME="bira"
-PYENV_ROOT="$HOME/.pyenv"
-PATH="$PYENV_ROOT/bin:$PATH"
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 plugins=(
     gitfast
