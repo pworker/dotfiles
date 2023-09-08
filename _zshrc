@@ -34,7 +34,6 @@ if [[ "$(uname)" == "Linux" ]]; then
     alias fd='fdfind'
 fi
 alias ping='prettyping --nolegend'
-alias ls='exa'
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
@@ -45,3 +44,4 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 #pyenv
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
