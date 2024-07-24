@@ -1,0 +1,17 @@
+# themes from https://github.com/alacritty/alacritty-theme
+
+import = ["~/.config/alacritty/themes/solarized_dark.toml"]
+
+[font]
+size = 16
+
+[font.normal]
+family = "UbuntuMono Nerd Font"
+
+[window]
+#decorations = "none"
+option_as_alt = "Both"
+
+[window.padding]
+x = 8
+y = 2

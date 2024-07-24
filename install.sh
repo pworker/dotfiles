@@ -9,6 +9,13 @@ ln -sf dotfiles/_tmux.conf ~/.tmux.conf
 ln -sf dotfiles/_zshrc ~/.zshrc
 ln -sf dotfiles/ohmyzsh ~/.ohmyzsh
 
+#Alacritty
+  #Theme
+mkdir -p ~/.config/alacritty/themes
+git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
+  #Config
+ln -sf ~/dotfiles/alacritty.toml ~/.config/alacritty
+
 
 #install oh-my-zsh & plugins with submodule 
 
