@@ -9,6 +9,7 @@ ln -sf dotfiles/_tmux.conf ~/.tmux.conf
 ln -sf dotfiles/_zshrc ~/.zshrc
 ln -sf dotfiles/ohmyzsh ~/.ohmyzsh
 
+ln -sf dotfiles/nvim ~/.config/nvim
 #Alacritty
   #Theme
 mkdir -p ~/.config/alacritty/themes
