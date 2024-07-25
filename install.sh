@@ -33,7 +33,7 @@ fi
 git clone https://github.com/ohmyzsh/ohmyzsh.git ~/dotfiles/ohmyzsh
 ln -sf ~/dotfiles/ohmyzsh ~/.ohmyzsh
 
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/dotfiles/zsh-plugins/zsh-syntax-highlightingt
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/dotfiles/zsh-plugins/zsh-syntax-highlighting
 ln -sf ~/dotfiles/zsh-plugins/zsh-syntax-highlighting ~/dotfiles/ohmyzsh/custom/plugins/zsh-syntax-highlighting
 
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/dotfiles/zsh-plugins/zsh-autosuggestions
