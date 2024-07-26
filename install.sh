@@ -7,9 +7,11 @@ ln -sf ~/dotfiles/_vimrc ~/.vimrc
 ln -sf ~/dotfiles/_vim ~/.vim
 ln -sf ~/dotfiles/_tmux.conf ~/.tmux.conf
 ln -sf ~/dotfiles/_zshrc ~/.zshrc
-
+ln -sf ~/dotfiles/_bashrc ~/.bashrc
+ln -sf ~/dotfiles/_bash_profile ~/.bash_profile
 ln -sf ~/dotfiles/nvim ~/.config/nvim
 
+ln -sf ~/dotfiles/starship.toml ~/.config/starship.toml
 #Alacritty
 #Theme
 #mkdir -p ~/.config/alacritty/themes

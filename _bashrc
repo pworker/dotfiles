@@ -1,0 +1,34 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# Set to superior editing mode
+set -o vi
+
+# ~~~~~~~~~~~~~~~ History ~~~~~~~~~~~~~~~~~~~~~~~~
+
+export HISTFILE=~/.histfile
+export HISTSIZE=25000
+export SAVEHIST=25000
+export HISTCONTROL=ignorespace
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  source "$HOME/.fzf.bash"
+
+  # brew bash completion
+  [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+else
+  #	source /usr/share/fzf/key-bindings.bash
+  #	source /usr/share/fzf/completion.bash
+
+  # The first one worked on Ubuntu, the eval one on Fedora. Keeping for reference.
+  # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+  eval "$(fzf --bash)"
+fi
+
+eval "$(starship init bash)"
+
+alias vim=nvim
