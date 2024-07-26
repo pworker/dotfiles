@@ -1,15 +1,15 @@
 # themes from https://github.com/alacritty/alacritty-theme
 
-import = ["~/.config/alacritty/themes/solarized_dark.toml"]
+import = ["~/.config/alacritty/themes/themes/tokyo-night.toml"]
 
 [font]
-size = 16
+size = 18
 
 [font.normal]
 family = "UbuntuMono Nerd Font"
 
 [window]
-decorations = "none"
+#decorations = "none"
 option_as_alt = "Both"
 
 [window.padding]
