@@ -9,14 +9,16 @@ ln -sf ~/dotfiles/_tmux.conf ~/.tmux.conf
 ln -sf ~/dotfiles/_zshrc ~/.zshrc
 ln -sf ~/dotfiles/_bashrc ~/.bashrc
 ln -sf ~/dotfiles/_bash_profile ~/.bash_profile
-ln -sf ~/dotfiles/nvim ~/.config/nvim
 
+ln -sf ~/dotfiles/nvim ~/.config/
 ln -sf ~/dotfiles/starship.toml ~/.config/starship.toml
+
 #Alacritty
 #Theme
-#mkdir -p ~/.config/alacritty/themes
-#git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
+mkdir -p ~/.config/alacritty/themes
+git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 #Config
+
 ln -sf ~/dotfiles/alacritty.toml ~/.config/alacritty
 
 if [[ "$OSTYPE" == "darwin"* ]]; then

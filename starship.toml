@@ -25,7 +25,6 @@ $python\
 $docker_context\
 $conda\
 [](fg:color_bg3 bg:color_bg1)\
-$battery\
 $time\
 $cmd_duration\
 [ ](fg:color_bg1)\
@@ -162,28 +161,6 @@ disabled = false
 time_format = "%R"
 style = "bg:color_bg1"
 format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
-
-
-[battery]
-full_symbol = '🔋 '
-charging_symbol = '⚡️ '
-discharging_symbol = '💀 '
-style = "bg:color_bg1"
-format = "[ $symbol$percentage]($style)"
-disabled = false
-
-
-[[battery.display]]
-threshold = 10
-style = "bold red bg:color_bg1"
-
-[[battery.display]]
-threshold = 30
-style = "bold yellow bg:color_bg1"
-
-[[battery.display]]
-threshold = 100
-style = "bold green bg:color_bg1"
 
 [cmd_duration]
 min_time = 500
