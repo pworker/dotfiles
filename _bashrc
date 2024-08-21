@@ -2,24 +2,25 @@
 # ~/.bashrc
 #
 
+# UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 # Set to superior editing mode
-set -o vi
 
 # ~~~~~~~~~~~~~~~ History ~~~~~~~~~~~~~~~~~~~~~~~~
 
-export HISTFILE=~/.histfile
 export HISTSIZE=25000
 export SAVEHIST=25000
 export HISTCONTROL=ignorespace
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   source "$HOME/.fzf.bash"
-
-  # brew bash completion
-  [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+  alias cat='bat'
+  alias ping='prettyping --nolegend'
+  export CLICOLOR=1
 else
   #	source /usr/share/fzf/key-bindings.bash
   #	source /usr/share/fzf/completion.bash
@@ -31,4 +32,10 @@ fi
 
 eval "$(starship init bash)"
 
-alias vim=nvim
+alias vim='nvim'
+
+#pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

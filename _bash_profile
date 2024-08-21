@@ -1,18 +1,28 @@
 # Only run on macOS
 if [[ "$OSTYPE" == "darwin"* ]]; then
-	# needed for brew
-	eval "$(/opt/homebrew/bin/brew shellenv)"
-    
-    # Only run these on Ubuntu/Debian and Fedora
+  # needed for brew
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+
+  # Only run these on Ubuntu/Debian and Fedora
 else
-    if [[ $(grep -E "^(ID|NAME)=" /etc/os-release | grep -Eq "ubuntu|debian|fedora")$? == 0 ]]; then
-       echo "linux"
-    fi
+  if [[ $(grep -E "^(ID|NAME)=" /etc/os-release | grep -Eq "ubuntu|debian|fedora")$? == 0 ]]; then
+    echo "linux"
+  fi
 fi
 
+if type brew &>/dev/null; then
+  HOMEBREW_PREFIX="$(brew --prefix)"
+  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
+      [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
+    done
+  fi
+fi
 
 if [ -r ~/.bashrc ]; then
-	source ~/.bashrc
+  source ~/.bashrc
 fi
 
 export XDG_CONFIG_HOME="$HOME"/.config
