@@ -1,6 +1,6 @@
 # UTF-8
-LC_ALL=en_US.UTF-8  
-LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 #FZF
 FZF_BASE=/opt/homebrew/opt/fzf
@@ -9,13 +9,16 @@ FZF_BASE=/opt/homebrew/opt/fzf
 ZSH=$HOME/.ohmyzsh
 ZSH_THEME="bira"
 
+export ZSH_TMUX_AUTOSTART=true
 plugins=(
+    brew  
     pass
     fzf
     zsh-syntax-highlighting
     zsh-autosuggestions
     zsh-completions
     docker
+    tmux
 )
 
 #oh-my-zsh
@@ -25,7 +28,7 @@ autoload -Uz compinit && compinit
 #OS specific
 if [[ "$(uname)" == "Darwin" ]]; then
     alias cat='bat'
-    eval $(/opt/homebrew/bin/brew shellenv)
+#    eval $(/opt/homebrew/bin/brew shellenv)
 fi
 if [[ "$(uname)" == "Linux" ]]; then
     alias cat='batcat'
@@ -35,10 +38,10 @@ alias ping='prettyping --nolegend'
 alias vim='nvim'
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        eval "$("$BASE16_SHELL/profile_helper.sh")"
+#BASE16_SHELL="$HOME/.config/base16-shell/"
+#[ -n "$PS1" ] && \
+#    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+#        eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 #pyenv
 export PYENV_ROOT="$HOME/.pyenv"
