@@ -19,7 +19,7 @@ Plug 'tpope/vim-fugitive'                                  " Git
 "-------------------=== Other ===-------------------------------
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'chriskempson/base16-vim'
+"Plug 'chriskempson/base16-vim'
 "-------------------=== Languages support ===-------------------
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
@@ -79,8 +79,8 @@ augroup END
 "" General settings
 "=====================================================
 syntax enable                               " syntax highlight
-let base16colorspace=256
-colorscheme base16-helios
+"let base16colorspace=256
+"colorscheme base16-helios
 
 set number                                  " show line numbers
 
