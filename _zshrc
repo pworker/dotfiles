@@ -28,6 +28,7 @@ autoload -Uz compinit && compinit
 #OS specific
 if [[ "$(uname)" == "Darwin" ]]; then
     alias cat='bat'
+    alias vim='nvim'
 #    eval $(/opt/homebrew/bin/brew shellenv)
 fi
 if [[ "$(uname)" == "Linux" ]]; then
@@ -35,7 +36,6 @@ if [[ "$(uname)" == "Linux" ]]; then
     alias fd='fdfind'
 fi
 alias ping='prettyping --nolegend'
-alias vim='nvim'
 
 # Base16 Shell
 #BASE16_SHELL="$HOME/.config/base16-shell/"
