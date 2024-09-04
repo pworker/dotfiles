@@ -9,7 +9,7 @@ FZF_BASE=/opt/homebrew/opt/fzf
 ZSH=$HOME/.ohmyzsh
 ZSH_THEME="bira"
 
-export ZSH_TMUX_AUTOSTART=true
+#export ZSH_TMUX_AUTOSTART=true
 plugins=(
     brew  
     pass
