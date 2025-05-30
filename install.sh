@@ -9,6 +9,7 @@ ln -sf ~/dotfiles/_tmux.conf ~/.tmux.conf
 ln -sf ~/dotfiles/_zshrc ~/.zshrc
 ln -sf ~/dotfiles/_bashrc ~/.bashrc
 ln -sf ~/dotfiles/_bash_profile ~/.bash_profile
+ln -sf ~/dotfiles/_gitconfig ~/.gitconfig
 
 ln -sf ~/dotfiles/nvim ~/.config/
 ln -sf ~/dotfiles/starship.toml ~/.config/starship.toml
